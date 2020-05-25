@@ -80,7 +80,7 @@ Cipher::Cipher(const std::string& method,
     }
 #ifndef USE_BOTAN2
     else if (method.find("chacha20") != std::string::npos) {
-        chacha.reset(new ChaCha(m_key, m_iv));
+        m_chacha.reset(new ChaCha(m_key, m_iv));
         return;
     }
 #endif
